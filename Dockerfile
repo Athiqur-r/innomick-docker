@@ -1,11 +1,22 @@
-# build environment
-FROM node:current-alpine
+//make a file called Docker 
+FROM node:latest
 
-WORKDIR /app
+//sets a folder
+RUN mkdir -p /app/src
 
-COPY package*.json ./
+//sets working directory
+WORKDIR /app/src
+
+//copy the package
+COPY package.json .
+
+//runs npm install
 RUN npm install
 
 COPY . .
 
+//exposes port 3000
+EXPOSE 3000
+
+//runs the comand npm start
 CMD ["npm", "start"]
