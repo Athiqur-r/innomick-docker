@@ -22,6 +22,6 @@ jobs:
     - name: Install dependencies & build
       run: |
         pwd
-        `docker build -t innomick-docker-testing`
+        `docker build -t innomick-docker-testing .`
         `docker run -itd -p 80:80 --name innomick-docker-testing innomick-docker-testing`
         pwd
