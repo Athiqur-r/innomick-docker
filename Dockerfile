@@ -1,6 +1,6 @@
 FROM node:lts-alpine as build 
 WORKDIR /app
-COPY package*.json ./
+COPY /var/www/NGINX/prod/package*.json ./
 RUN npm install 
 COPY . .
 CMD ["npm", "start"]
