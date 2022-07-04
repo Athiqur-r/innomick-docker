@@ -30,6 +30,6 @@ jobs:
       run: |
         pwd
         ls
-        `docker build -t innomick-docker-testing .`
-        `docker run -itd -p 80:80 --name innomick-docker-testing innomick-docker-testing`
+        sudo docker build -t innomick-docker-testing /var/www/NGINX/actions-runner/_work/innomick-docker/innomick-docker/Dockerfile
+        sudo docker run -itd -p 80:80 --name innomick-docker-testing innomick-docker-testing
         pwd
