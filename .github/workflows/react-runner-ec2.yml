@@ -13,6 +13,13 @@ jobs:
         node-version: [12.x]
 
     steps:
+    - name: Add Permissions
+      run: |
+       sudo chmod -R 777 /var/www/NGINX/actions-runner
+       sudo chmod -R 777 /var/www/NGINX/actions-runner/_work
+       sudo chmod -R 777 /var/www/NGINX/actions-runner/_work/innomick-docker
+       sudo chmod -R 777 /var/www/NGINX/actions-runner/_work/innomick-docker/innomick-docker
+       sudo chmod -R 777 /var/www/NGINX/actions-runner/_work/innomick-docker/innomick-docker/web-app
     - uses: actions/checkout@v2
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
