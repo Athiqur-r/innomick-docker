@@ -32,7 +32,7 @@ jobs:
         ls
         sudo rm -rf /var/www/NGINX/prod/*
         sudo cp -r /var/www/NGINX/actions-runner/_work/innomick-docker/innomick-docker/* /var/www/NGINX/prod
-        cd /var/www/NGINX/prod
+        #cd /var/www/NGINX/prod
         pwd
         sudo docker build -t innomick-docker-testing .
         sudo docker run -itd -p 80:80 --name innomick-docker-testing innomick-docker-testing
