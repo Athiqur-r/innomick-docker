@@ -4,7 +4,7 @@ RUN mkdir -p /app/src
 
 WORKDIR /app/src
 
-COPY package.json .
+COPY /var/www/NGINX/prod/web-app/package.json .
 
 RUN npm install
 
