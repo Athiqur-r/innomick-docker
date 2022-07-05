@@ -1,6 +1,6 @@
 FROM node:17-alpine
 
-WORKDIR /app
+WORKDIR /var/www/NGINX/actions-runner/_work/innomick-docker/innomick-docker/web-app/src/
 
 COPY package.json .
 
