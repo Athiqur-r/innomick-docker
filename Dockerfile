@@ -1,6 +1,15 @@
-FROM node:lts-alpine as build 
-WORKDIR /var/www/NGINX/prod/web-app
-#COPY /var/www/NGINX/prod/package*.json ./
+FROM node:latest
+
+RUN mkdir -p /app/src
+
+WORKDIR /app/src
+
+COPY package.json .
+
+RUN npm install
+
 COPY . .
-RUN npm install 
+
+EXPOSE 3000
+
 CMD ["npm", "start"]
