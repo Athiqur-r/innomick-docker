@@ -4,7 +4,7 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/
+COPY /var/www/NGINX/actions-runner/_work/innomick-docker/innomick-docker/web-app/src/package.json /usr/src/app/
 
 RUN npm install
 
