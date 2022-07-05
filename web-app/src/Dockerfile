@@ -1,13 +1,17 @@
-FROM node:17-alpine
+FROM node:latest
 
-WORKDIR /var/www/NGINX/actions-runner/_work/innomick-docker/innomick-docker/web-app/src/
+RUN mkdir -p /usr/src/app
 
-COPY package.json .
+WORKDIR /usr/src/app
+
+COPY package.json /usr/src/app/
 
 RUN npm install
 
-COPY . .
+ADD src /usr/src/app/src
+
+ADD public /usr/src/app/public
 
 EXPOSE 3000
 
-CMD ["npm","start"]
+CMD ['npm', 'start']
